@@ -33,9 +33,9 @@ export default function RotatingIcons() {
   ];
 
   return (
-    <div className="relative flex flex-col items-center justify-center gap-8 px-4 sm:px-6 mt-10">
+    <div className="relative flex flex-col items-center justify-center gap-8 sm:pr-0 pr-3 px-0 sm:px-6 mt-10">
       <div className="flex items-center justify-center">
-        <div className="relative h-[370px] w-[370px] scale-[70%] md:scale-100">
+        <div className="relative h-[350px] w-[350px] scale-[70%] md:scale-100">
           <div className="relative h-full rounded-full border border-gray-800">
             <div className="absolute inset-20 rounded-full bg-gradient-to-b from-[rgba(113,134,255,0.2)] via-[rgba(254,117,135,0.1)] to-[rgba(254,117,135,0.2)]" />
 
@@ -45,7 +45,7 @@ export default function RotatingIcons() {
                 initial={{ rotate: index * (360 / icons.length) }}
                 className="absolute top-1/2 -translate-x-20 transform"
                 style={{
-                  originX: "190px",
+                  originX: "180px",
                   originY: "-8px",
                 }}
                 animate={{
@@ -57,22 +57,7 @@ export default function RotatingIcons() {
                   ease: "linear",
                 }}
               >
-                <motion.div
-                  initial={{ rotate: 0 }}
-                  style={{
-                    rotate: index * 100,
-                  }}
-                  animate={{
-                    rotate: [0, -360],
-                  }}
-                  transition={{
-                    repeat: Infinity,
-                    duration: 12,
-                    ease: "linear",
-                  }}
-                >
-                  {icon}
-                </motion.div>
+                {icon}
               </motion.div>
             ))}
             <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform">

@@ -26,17 +26,13 @@ export default function TextInfoSection() {
   ];
 
   return (
-    <div className="flex flex-col space-y-8 w-5/12 text-start">
+    <div className="flex flex-col space-y-6 sm:space-y-8 w-full sm:w-5/12 text-start px-4 sm:px-0">
       {data.map((item, index) => (
         <div key={index} className="flex text-start align-middle items-center gap-4">
-          <div
-            style={{
-              flexBasis: 1,
-            }}
-          >
+          <div>
             <Checkbox />
           </div>
-          <p className=" font-medium text-md flex items-start tracking-normal ">
+          <p className="font-medium text-sm sm:text-md tracking-normal">
             {item}
           </p>
         </div>
