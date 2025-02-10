@@ -5,7 +5,7 @@ export default function Navbar() {
   return (
     <div className="">
       <div className="flex justify-between align-middle w-full">
-        <div className="flex  items-center justify-center gap-2">
+        <Link href='/' className="flex  items-center justify-center gap-2">
           <Image
             src="/assets/simple-ar-logo.svg"
             alt="Simple AR"
@@ -15,7 +15,7 @@ export default function Navbar() {
           <p className="font-bold text-xl  tracking-normal text-center">
             Simple AR
           </p>{" "}
-        </div>
+        </Link>
         <Link
         target="_blank"
           href="https://calendly.com/aditya-be0y/demo?month=2024-04"
