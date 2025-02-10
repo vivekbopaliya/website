@@ -16,7 +16,7 @@ export default function RotatingIcons() {
       <Image alt="sage" src="/rotating-icons/sage.svg" fill />
     </div>,
     <div key="b" className=" p-6">
-      <Image alt="b" src="/rotating-icons/b.svg" fill />
+      <Image alt="b" src="/rotating-icons/b.svg" fill/>
     </div>,
     <div key="phone" className=" p-6">
       <Image alt="phone" src="/rotating-icons/phone.svg" fill />
@@ -44,7 +44,7 @@ export default function RotatingIcons() {
                 key={index}
                 className="absolute top-1/2 -translate-x-20 transform"
                 style={{
-                  originX: "200px",
+                  originX: "180px",
                   originY: "-8px",
                 }}
                 animate={{
