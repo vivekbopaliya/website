@@ -17,6 +17,7 @@ export default function Navbar() {
           </p>{" "}
         </div>
         <Link
+        target="_blank"
           href="https://calendly.com/aditya-be0y/demo?month=2024-04"
           className="relative inline-flex h-10 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50"
         >

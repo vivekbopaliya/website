@@ -52,9 +52,9 @@ export default function RotatingIcons() {
                 }}
                 transition={{
                   repeat: Infinity,
-                  duration: 8,
+                  duration: 12,
                   ease: "linear",
-                  delay: index,
+                  delay: index * 1.52,
                 }}
               >
                 <motion.div
@@ -66,9 +66,9 @@ export default function RotatingIcons() {
                   }}
                   transition={{
                     repeat: Infinity,
-                    duration: 8,
+                    duration: 12,
                     ease: "linear",
-                    delay: index,
+                    delay: index * 1.52,
                   }}
                 >
                   {icon}

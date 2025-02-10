@@ -16,13 +16,16 @@ export default function SectionOne() {
           </p>
         </div>
 
-        <p className="font-extralight text-sm tracking-normal text-center">
+        <p style={{
+            fontWeight: 200
+        }} className="font-thin text-sm tracking-normal text-center">
           Simplify accounts receivable management by automating collection,
           reconciliation, and billing helping you save on <br /> labor costs and
           improve cash flow efficiency.
         </p>
 
         <Link
+          target="_blank"
           href="https://calendly.com/aditya-be0y/demo?month=2024-04"
           className="relative mx-auto w-44 inline-flex h-10 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50"
         >
