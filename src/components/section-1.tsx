@@ -53,7 +53,7 @@ export default function SectionOne() {
       </div>
 
       <hr className="sm:w-4/6 w-5/6  border-t border-gray-300 mt-20 pb-20 opacity-30 sm:opacity-20" />
-      <div className="relative z-10 flex flex-col sm:flex-row justify-around items-center sm:pb-4 pb-14  w-full gap-12 sm:gap-0">
+      <div className="relative z-10 flex flex-col sm:flex-row justify-around items-center sm:pb-4 pb-14  w-full gap-0 sm:gap-0">
         <TextInfoSection />
         <RotatingIcons />
       </div>
