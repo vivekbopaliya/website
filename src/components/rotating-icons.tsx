@@ -39,27 +39,43 @@ export default function RotatingIcons() {
           <div className="relative h-full rounded-full border border-gray-800">
             <div className="absolute inset-20 rounded-full bg-gradient-to-b from-[rgba(113,134,255,0.2)] via-[rgba(254,117,135,0.1)] to-[rgba(254,117,135,0.2)]" />
 
-            {icons.map((icon, index) => (
-              <motion.div
-                key={index}
-                initial={{ rotate: index * (360 / icons.length) }}
-                className="absolute top-1/2 -translate-x-20 transform"
-                style={{
-                  originX: "180px",
-                  originY: "-8px",
-                }}
-                animate={{
-                  rotate: [index * (360 / icons.length), index * (360 / icons.length) + 360],
-                }}
-                transition={{
-                  repeat: Infinity,
-                  duration: 12,
-                  ease: "linear",
-                }}
-              >
-                {icon}
-              </motion.div>
-            ))}
+            {icons.map((icon, index) => {
+              const initialRotation = index * (360 / icons.length);
+              
+              return (
+                <motion.div
+                  key={index}
+                  initial={{ rotate: initialRotation }}
+                  className="absolute top-1/2 -translate-x-20 transform"
+                  style={{
+                    originX: "180px",
+                    originY: "-8px",
+                  }}
+                  animate={{
+                    rotate: [initialRotation, initialRotation + 360],
+                  }}
+                  transition={{
+                    repeat: Infinity,
+                    duration: 12,
+                    ease: "linear",
+                  }}
+                >
+                  <motion.div
+                    initial={{ rotate: -initialRotation }}
+                    animate={{
+                      rotate: [-initialRotation, -(initialRotation + 360)],
+                    }}
+                    transition={{
+                      repeat: Infinity,
+                      duration: 12,
+                      ease: "linear",
+                    }}
+                  >
+                    {icon}
+                  </motion.div>
+                </motion.div>
+              );
+            })}
             <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform">
               <div className="flex items-center justify-center gap-2">
                 <Image
