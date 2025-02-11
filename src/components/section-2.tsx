@@ -3,7 +3,9 @@ import Link from "next/link";
 
 export default function SectionTwo() {
   return (
-    <main className="relative min-h-[240px] flex gap-7 flex-col text-center items-center py-16 sm:py-32 px-0 sm:px-6 overflow-hidden">
+    <main className="relative min-h-[240px] flex gap-7 flex-col text-center items-center pb-16 sm:py-32 px-0 sm:px-6 overflow-hidden">
+        <hr className="sm:w-4/6 w-5/6  border-t py-8  sm:py-16 border-gray-300  opacity-20 " />
+
       <div className="relative z-10 flex flex-col items-center gap-7">
         <p className="font-bold text-3xl sm:text-4xl tracking-normal text-center">
           Struggling to get Paid on Time?

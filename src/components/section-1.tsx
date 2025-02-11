@@ -17,13 +17,16 @@ export default function SectionOne() {
         </div>
         <div className="flex sm:hidden gap-4 flex-col">
           <p className="font-bold text-2xl sm:text-5xl tracking-normal">
-            Automate Your Accounts Receivables <br /><span className="font-bold text-2xl sm:text-5xl tracking-normal bg-gradient-to-r from-[#7186FF] via-[#FE7587] to-[#FE7587] text-transparent bg-clip-text">Your Collections on Autopilot</span>
+            Automate Your Accounts Receivables <br />
+            <span className="font-bold text-2xl sm:text-5xl tracking-normal bg-gradient-to-r from-[#7186FF] via-[#FE7587] to-[#FE7587] text-transparent bg-clip-text">
+              Your Collections on Autopilot
+            </span>
           </p>
         </div>
 
         <p className="font-thin text-xs sm:text-lg tracking-normal text-center px-4">
           Simplify accounts receivable management by automating collection,
-          reconciliation, and billing helping you save on  <br /> labor costs and
+          reconciliation, and billing helping you save on <br /> labor costs and
           improve cash flow efficiency.
         </p>
 
@@ -49,8 +52,8 @@ export default function SectionOne() {
         />
       </div>
 
-        <hr className="sm:w-4/6 w-5/6  border-t border-gray-300 mt-20 pb-20 opacity-30 sm:opacity-20" />
-      <div className="relative z-10 flex flex-col sm:flex-row justify-around items-center pb-20  w-full gap-12 sm:gap-0">
+      <hr className="sm:w-4/6 w-5/6  border-t border-gray-300 mt-20 pb-20 opacity-30 sm:opacity-20" />
+      <div className="relative z-10 flex flex-col sm:flex-row justify-around items-center sm:pb-4 pb-14  w-full gap-12 sm:gap-0">
         <TextInfoSection />
         <RotatingIcons />
       </div>

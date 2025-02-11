@@ -2,34 +2,79 @@
 
 import React from "react";
 import Image from "next/image";
-
+interface Icon {
+  key: string;
+  src: string;
+  position: {
+    angle: number;
+  };
+}
 export default function StaticIcons() {
-  const icons = [
-    <div key="quickbook" className="p-6">
-      <Image alt="quickbook" src="/rotating-icons/quick-book.svg" fill />
-    </div>,
-    <div key="xero" className="p-6">
-      <Image alt="xero" src="/rotating-icons/xero.svg" fill />
-    </div>,
-    <div key="sage" className="p-6">
-      <Image alt="sage" src="/rotating-icons/sage.svg" fill />
-    </div>,
-    <div key="b" className="p-6">
-      <Image alt="b" src="/rotating-icons/b.svg" fill/>
-    </div>,
-    <div key="phone" className="p-6">
-      <Image alt="phone" src="/rotating-icons/phone.svg" fill />
-    </div>,
-    <div key="outlook" className="p-6">
-      <Image alt="outlook" src="/rotating-icons/outlook.svg" fill />
-    </div>,
-    <div key="gmail" className="p-6">
-      <Image alt="gmail" src="/rotating-icons/gmail.svg" fill />
-    </div>,
-    <div key="whatsapp" className="p-6">
-      <Image alt="whatsapp" src="/rotating-icons/whatsapp.svg" fill />
-    </div>,
+  const leftIcons = [
+    {
+      key: "quickbook",
+      src: "/rotating-icons/quick-book.svg",
+      position: { angle: 235 },
+    },
+    {
+      key: "xero",
+      src: "/rotating-icons/xero.svg",
+      position: { angle: 200 },
+    },
+    {
+      key: "sage",
+      src: "/rotating-icons/sage.svg",
+      position: { angle: 170 },
+    },
+    {
+      key: "b",
+      src: "/rotating-icons/b.svg",
+      position: { angle: 137.5 },
+    },
   ];
+
+  const rightIcons = [
+    {
+      key: "whatsapp",
+      src: "/rotating-icons/whatsapp.svg",
+      position: { angle: 300 },
+    },
+    {
+      key: "gmail",
+      src: "/rotating-icons/gmail.svg",
+      position: { angle: 335 },
+    },
+    {
+      key: "outlook",
+      src: "/rotating-icons/outlook.svg",
+      position: { angle: 370 },
+    },
+    {
+      key: "phone",
+      src: "/rotating-icons/phone.svg",
+      position: { angle: 405.5 },
+    },
+  ];
+
+  const renderIcon = (icon: Icon) => {
+    const radius = 170;
+    const x = radius * Math.cos((icon.position.angle * Math.PI) / 180);
+    const y = radius * Math.sin((icon.position.angle * Math.PI) / 180);
+
+    return (
+      <div
+        key={icon.key}
+        className="absolute"
+        style={{
+          transform: `translate(${x + 155}px, ${y + 155}px)`,
+        }}
+      >
+        <div className="relative w-12 h-12">
+          <Image alt={icon.key} src={icon.src} fill />
+        </div>
+      </div>
+    );
+  };
 
   return (
     <div className="relative flex flex-col items-center justify-center gap-8 sm:pr-0 pr-3 px-0 sm:px-6 mt-10">
@@ -38,25 +83,10 @@ export default function StaticIcons() {
           <div className="relative h-full rounded-full border border-gray-800">
             <div className="absolute inset-20 rounded-full bg-gradient-to-b from-[rgba(113,134,255,0.2)] via-[rgba(254,117,135,0.1)] to-[rgba(254,117,135,0.2)]" />
 
-            {icons.map((icon, index) => {
-              const angle = (index * 360) / icons.length;
-              const radius = 170; 
-              const x = radius * Math.cos((angle * Math.PI) / 180);
-              const y = radius * Math.sin((angle * Math.PI) / 180);
+            {leftIcons.map(renderIcon)}
 
-              return (
-                <div
-                  key={index}
-                  className="absolute"
-                  style={{
-                    transform: `translate(${x + 155}px, ${y + 155}px)`,
-                  }}
-                >
-                  {icon}
-                </div>
-              );
-            })}
-            
+            {rightIcons.map(renderIcon)}
+
             <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform">
               <div className="flex items-center justify-center gap-2">
                 <Image
