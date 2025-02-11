@@ -1,10 +1,9 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
 import Image from "next/image";
 
-export default function RotatingIcons() {
+export default function StaticIcons() {
   const icons = [
     <div key="quickbook" className="p-6">
       <Image alt="quickbook" src="/rotating-icons/quick-book.svg" fill />
@@ -40,42 +39,24 @@ export default function RotatingIcons() {
             <div className="absolute inset-20 rounded-full bg-gradient-to-b from-[rgba(113,134,255,0.2)] via-[rgba(254,117,135,0.1)] to-[rgba(254,117,135,0.2)]" />
 
             {icons.map((icon, index) => {
-              const initialRotation = index * (360 / icons.length);
-              
+              const angle = (index * 360) / icons.length;
+              const radius = 170; 
+              const x = radius * Math.cos((angle * Math.PI) / 180);
+              const y = radius * Math.sin((angle * Math.PI) / 180);
+
               return (
-                <motion.div
+                <div
                   key={index}
-                  initial={{ rotate: initialRotation }}
-                  className="absolute top-1/2 -translate-x-20 transform"
+                  className="absolute"
                   style={{
-                    originX: "180px",
-                    originY: "-8px",
-                  }}
-                  animate={{
-                    rotate: [initialRotation, initialRotation + 360],
-                  }}
-                  transition={{
-                    repeat: Infinity,
-                    duration: 12,
-                    ease: "linear",
+                    transform: `translate(${x + 155}px, ${y + 155}px)`,
                   }}
                 >
-                  <motion.div
-                    initial={{ rotate: -initialRotation }}
-                    animate={{
-                      rotate: [-initialRotation, -(initialRotation + 360)],
-                    }}
-                    transition={{
-                      repeat: Infinity,
-                      duration: 12,
-                      ease: "linear",
-                    }}
-                  >
-                    {icon}
-                  </motion.div>
-                </motion.div>
+                  {icon}
+                </div>
               );
             })}
+            
             <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform">
               <div className="flex items-center justify-center gap-2">
                 <Image
